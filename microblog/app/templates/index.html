@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hi, {{current_user.username}}!</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} asys: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}
+
+<!--
+----------------------------------------------
+Comments:
+    This was the original index.html code,
+    before using render_templates and base.html
+-----------------------------------------------
+
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog!</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+    </body>
+</html>
+-->
